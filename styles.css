@@ -1,34 +1,36 @@
 body {
-  background:#222831;
-    font-family: 'Press Start 2P', cursive;
+  background: #222831;
+  color: #EEEEEE;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
 h1 {
-  color:#00ADB5;
-
-  text-transform: uppercase;
-  text-align:center;
-  max-width: 600px;
-  margin: 100px auto;
+  color: #00ADB5;
   line-height: 60px;
+  margin: 100px auto;
+  max-width: 600px;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-top: 100px;
 }
 
 p {
-  color:#EEEEEE;
+  text-align: left;
 }
 
 .container {
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
+.dice {
+  margin: 0 30px;
+}
 
 .dice img {
   background: #EEEEEE;
-border-radius: 30px;
-}
-
-
-.dice {
-  margin:0 20px;
+  border-radius: 30px;
 }
