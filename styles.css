@@ -1,0 +1,34 @@
+body {
+  background:#222831;
+    font-family: 'Press Start 2P', cursive;
+}
+
+h1 {
+  color:#00ADB5;
+
+  text-transform: uppercase;
+  text-align:center;
+  max-width: 600px;
+  margin: 100px auto;
+  line-height: 60px;
+}
+
+p {
+  color:#EEEEEE;
+}
+
+.container {
+  display:flex;
+  justify-content: center;
+}
+
+
+.dice img {
+  background: #EEEEEE;
+border-radius: 30px;
+}
+
+
+.dice {
+  margin:0 20px;
+}
