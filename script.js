@@ -2,8 +2,6 @@
 var rollSound = new Audio("audio/roll.mp3");
 // Initialize shuffleCount to 1 to simulate dice shuffle
 var shuffleCount = 0;
-// Get h2 element and store it in a variable
-var winnerTxt = document.querySelector("h2");
 
 // Dice rolling function.
 // Loop 5 times to simulate dice shuffle then keep the 2 random numbers generated during the 5th loop run.
@@ -11,8 +9,8 @@ var winnerTxt = document.querySelector("h2");
 function rollDice() {
 
   // Reset winner text if h2 is not an empty string
-  if (winnerTxt.textContent !== "") {
-    winnerTxt.textContent = "";
+  if ($("h2").text !== "") {
+    $("h2").text("");
   }
 
   //  Perform the function inside setTimeout after 100 ms
@@ -22,13 +20,9 @@ function rollDice() {
     var diceN1 = Math.floor(Math.random() * 6) + 1;
     var diceN2 = Math.floor(Math.random() * 6) + 1;
 
-    // Store requested css selectors in variables
-    var imgP1 = document.querySelector(".img1");
-    var imgP2 = document.querySelector(".img2");
-
-    // Set the src attribute to display the corresponding image based on dice value
-    imgP1.src = "images/Dice-" + diceN1 + ".png";
-    imgP2.src = "images/Dice-" + diceN2 + ".png";
+    // Select images and set the src attribute to display the corresponding image based on dice value
+    $(".img1").attr("src", "images/Dice-" + diceN1 + ".png");
+    $(".img2").attr("src", "images/Dice-" + diceN2 + ".png");
 
     // Increment shuffle counter
     shuffleCount++;
@@ -52,8 +46,8 @@ function rollDice() {
         winner = "Draw!";
       }
 
-      // Set the textContent property of h2 element to be equal to the string defined earlier
-      winnerTxt.textContent = winner;
+      // Set the h2 text to be equal to the winner string determined above
+      $("h2").text(winner);
     }
 
   }, 100);
@@ -61,8 +55,8 @@ function rollDice() {
 }
 
 
-// Add an EventListener to the whole web page to detect when a key is pressed
-document.addEventListener("keydown", function(event) {
+// Add a "keydown" handler to the whole page to detect keyboard inputs
+$(document).keydown(function(event) {
   // If space key is pressed then
   if (event.key === " ") {
     // Check if the Audio object property paused is True
